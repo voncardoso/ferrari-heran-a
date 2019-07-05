@@ -1,0 +1,58 @@
+# Project: Carro
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Ferrari.o Carro.o FerrariMotores.o Lamborghini.o LambogMotores.o LandRouver.o LandRouverPassageiros.o Cliente.o ClientePcd.o ClienteEmpresa.o
+LINKOBJ  = main.o Ferrari.o Carro.o FerrariMotores.o Lamborghini.o LambogMotores.o LandRouver.o LandRouverPassageiros.o Cliente.o ClientePcd.o ClienteEmpresa.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Carro .exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Ferrari.o: Ferrari.cpp
+	$(CPP) -c Ferrari.cpp -o Ferrari.o $(CXXFLAGS)
+
+Carro.o: Carro.cpp
+	$(CPP) -c Carro.cpp -o Carro.o $(CXXFLAGS)
+
+FerrariMotores.o: FerrariMotores.cpp
+	$(CPP) -c FerrariMotores.cpp -o FerrariMotores.o $(CXXFLAGS)
+
+Lamborghini.o: Lamborghini.cpp
+	$(CPP) -c Lamborghini.cpp -o Lamborghini.o $(CXXFLAGS)
+
+LambogMotores.o: LambogMotores.cpp
+	$(CPP) -c LambogMotores.cpp -o LambogMotores.o $(CXXFLAGS)
+
+LandRouver.o: LandRouver.cpp
+	$(CPP) -c LandRouver.cpp -o LandRouver.o $(CXXFLAGS)
+
+LandRouverPassageiros.o: LandRouverPassageiros.cpp
+	$(CPP) -c LandRouverPassageiros.cpp -o LandRouverPassageiros.o $(CXXFLAGS)
+
+Cliente.o: Cliente.cpp
+	$(CPP) -c Cliente.cpp -o Cliente.o $(CXXFLAGS)
+
+ClientePcd.o: ClientePcd.cpp
+	$(CPP) -c ClientePcd.cpp -o ClientePcd.o $(CXXFLAGS)
+
+ClienteEmpresa.o: ClienteEmpresa.cpp
+	$(CPP) -c ClienteEmpresa.cpp -o ClienteEmpresa.o $(CXXFLAGS)
